@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://gn4xcrfsmx6h"
 SignalHub="*uid://bevt2ws5tn07f"
 ScoreManager="*uid://bbbdmyjd3yieb"
 DataManager="*uid://by4lcnukv6aog"
+TimeManager="*uid://qy553k7ph0ft"
 
 [display]
 

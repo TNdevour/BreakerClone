@@ -265,6 +265,7 @@ label_settings = ExtResource("7_4fs4r")
 horizontal_alignment = 1
 
 [node name="MenuLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=1568764137]
+visible = false
 layout_mode = 2
 text = "PRESS ESC TO CHANGE DIFFICULTY"
 label_settings = ExtResource("7_4fs4r")

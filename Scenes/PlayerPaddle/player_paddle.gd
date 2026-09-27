@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	var new_x_pos:float = position.x + (move_direction * _paddle_speed * delta)
 	new_x_pos = clamp(
 		new_x_pos,
-		_start_position.x - _paddle_half_width,
-		_start_position.x + _paddle_half_width
+		_start_position.x - _paddle_half_width -10.0,
+		_start_position.x + _paddle_half_width + 20.0
 		)
 	position.x = new_x_pos
 	##testing paddle bounce

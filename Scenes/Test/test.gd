@@ -11,5 +11,3 @@ func _ready() -> void:
 
 func _on_launch_timer_timeout() -> void:
 	ball_v_2.launch_ball()
-
-			

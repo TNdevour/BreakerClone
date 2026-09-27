@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d4c8k78s30se1"
+path="res://.godot/imported/Troubadeck 53 A Screw Loose.ogg-251e9e0af08f9d2b63761fe9b1fd6405.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Troubadeck 53 A Screw Loose.ogg"
+dest_files=["res://.godot/imported/Troubadeck 53 A Screw Loose.ogg-251e9e0af08f9d2b63761fe9b1fd6405.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

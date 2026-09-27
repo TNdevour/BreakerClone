@@ -27,9 +27,8 @@ func _ready() -> void:
 	aim_ball()
 
 func connect_signals()-> void:
-	SignalHub.on_ball_launched.connect(launch_ball)
 	SignalHub.on_life_lost.connect(destroy_ball)
-	SignalHub.on_game_over.connect(remove_ball_for_end_game)
+	SignalHub.on_game_over.connect(destroy_ball_for_end_game)
 
 func aim_ball()-> void:
 	arrow_pivot.look_at(_launch_direction * AIM_FACTOR)
@@ -64,7 +63,9 @@ func _physics_process(delta: float) -> void:
 
 func destroy_ball()->void:
 	print("Ball: Ball destroyed")
-	set_deferred(DataManager.QUEUE_FREE_FUNC_NAME, self)
+	#set_deferred(DataManager.QUEUE_FREE_FUNC_NAME, self)
+	queue_free()
 
-func remove_ball_for_end_game(_is_game_won:bool)-> void:
+func destroy_ball_for_end_game(_is_game_won:bool)-> void:
+	process_mode = Node.PROCESS_MODE_DISABLED
 	destroy_ball()

@@ -51,19 +51,21 @@ func toggle_pause() -> void:
 		get_tree().paused = false
 		_game_state = GameState.PLAYING
 		options_widget.hide()
+		SignalHub.emit_on_pause_state_toggled(false)
 		announce_game_state()
 	elif _game_state == GameState.PLAYING:
 		print("paused")
 		get_tree().paused = true
 		_game_state = GameState.PAUSED
 		options_widget.show()
+		SignalHub.emit_on_pause_state_toggled(true)
 		announce_game_state()
 
 func update_score_display()-> void:
 	game_score_value.text = "%d"%[ScoreManager._player_score]
 
 func set_high_score_values()-> void:
-	best_time_value.text = "%d"%[ScoreManager._best_time]
+	best_time_value.text = "%d"%[TimeManager._best_time]
 	high_score_label.text = "%d"%[ScoreManager._high_score]
 
 func display_lifegrid_contents()-> void:
@@ -111,7 +113,7 @@ func show_final_score()-> void:
 	final_score_label.show()
 
 func show_final_time()-> void:
-	final_time_label.text = "Time: %d seconds"%[ScoreManager._play_time]
+	final_time_label.text = "Time: %d seconds"%[TimeManager._game_time]
 	final_time_label.show()
 
 func hide_game_over_ui_elements()-> void:
@@ -125,7 +127,7 @@ func hide_game_over_ui_elements()-> void:
 
 func show_restart_and_menu_labels()-> void:
 	restart_label.show()
-	menu_label.show()
+	#menu_label.show()
 
 func hide_special_ui_widgets()-> void:
 	options_widget.hide()

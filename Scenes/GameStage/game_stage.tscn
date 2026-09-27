@@ -55,6 +55,3 @@ position = Vector2(557, 559)
 
 [node name="GameUi" parent="." unique_id=802495142 instance=ExtResource("7_c4upt")]
 z_index = 10
-
-[node name="PlayTimer" type="Timer" parent="." unique_id=1056922375]
-process_mode = 1
