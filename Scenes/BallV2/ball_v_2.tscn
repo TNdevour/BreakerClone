@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://rdbkj6yxxa13"]
+
+[ext_resource type="Script" uid="uid://cxavjv6i8tb3t" path="res://Scenes/BallV2/ball_v_2.gd" id="1_kb3pa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64457"]
+radius = 15.0
+
+[node name="BallV2" type="CharacterBody2D" unique_id=1963496185]
+collision_mask = 7
+script = ExtResource("1_kb3pa")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=796591079]
+polygon = PackedVector2Array(-7, -13, 7, -13, 13, -7, 14, 5, 6, 14, -6, 14, -14, 7, -14, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1866405714]
+shape = SubResource("CircleShape2D_64457")
+
+[node name="CollisionTimer" type="Timer" parent="." unique_id=1920076206]
+wait_time = 0.1
+one_shot = true
+
+[node name="ArrowPivot" type="Marker2D" parent="." unique_id=1424567921]
+
+[node name="Arrow" type="Polygon2D" parent="ArrowPivot" unique_id=1126455603]
+position = Vector2(34, 0)
+polygon = PackedVector2Array(-6, -9, -6, 8, 19, 0)

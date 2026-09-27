@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cwiexi6qdhbri"]
+
+[ext_resource type="Script" uid="uid://cnpgcvjq0ky1u" path="res://Scenes/PlayerPaddle/player_paddle.gd" id="1_qjax5"]
+
+[sub_resource type="Gradient" id="Gradient_ybytb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0x2ti"]
+gradient = SubResource("Gradient_ybytb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tqgj"]
+size = Vector2(128, 2)
+
+[node name="PlayerPaddle" type="AnimatableBody2D" unique_id=1623619519]
+script = ExtResource("1_qjax5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1960361170]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -20.0
+offset_right = 128.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(128, 20)
+texture = SubResource("GradientTexture1D_0x2ti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798065265]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_2tqgj")

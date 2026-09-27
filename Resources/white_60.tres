@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dew7ha1oxkwdh"]
+
+[ext_resource type="FontFile" uid="uid://bccwygh10qt8j" path="res://Assets/Fonts/LUNCHTIME.TTF" id="1_v17vb"]
+
+[resource]
+font = ExtResource("1_v17vb")
+font_size = 60

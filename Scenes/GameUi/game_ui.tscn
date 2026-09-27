@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://cbdggainatlhf"]
+
+[ext_resource type="LabelSettings" uid="uid://cwinhnta2y427" path="res://Resources/red_40.tres" id="1_ikgbi"]
+[ext_resource type="Script" uid="uid://dfwrqdfcp44op" path="res://Scenes/GameUi/game_ui.gd" id="1_ss56r"]
+[ext_resource type="LabelSettings" uid="uid://dnn7j4d744fay" path="res://Resources/yellow_50.tres" id="3_4fs4r"]
+[ext_resource type="FontFile" uid="uid://bccwygh10qt8j" path="res://Assets/Fonts/LUNCHTIME.TTF" id="4_62njd"]
+[ext_resource type="LabelSettings" uid="uid://biwblfdyhxct0" path="res://Resources/orange_50.tres" id="5_pusr7"]
+[ext_resource type="LabelSettings" uid="uid://xrneddvp4wud" path="res://Resources/green_50.tres" id="6_3yw5c"]
+[ext_resource type="LabelSettings" uid="uid://c1fr43goocvsy" path="res://Resources/white_40.tres" id="7_4fs4r"]
+[ext_resource type="PackedScene" uid="uid://d1fvyxtpiabej" path="res://Scenes/VolumeControl/volume_control.tscn" id="8_62njd"]
+[ext_resource type="LabelSettings" uid="uid://dew7ha1oxkwdh" path="res://Resources/white_60.tres" id="9_62njd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fqor"]
+font = ExtResource("4_62njd")
+font_size = 70
+font_color = Color(1, 0.9490196, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88byq"]
+font = ExtResource("4_62njd")
+font_size = 70
+font_color = Color(1, 0.49803922, 0.15294118, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_adcmg"]
+font = ExtResource("4_62njd")
+font_size = 70
+font_color = Color(0.13333334, 0.69411767, 0.29803923, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_62njd"]
+font = ExtResource("4_62njd")
+font_size = 50
+font_color = Color(1, 0.45882353, 0.5568628, 1)
+
+[node name="GameUi" type="Control" unique_id=802495142]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ss56r")
+
+[node name="HB" type="HBoxContainer" parent="." unique_id=2137492799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBLeft" type="VBoxContainer" parent="HB" unique_id=669841007]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer" type="Control" parent="HB/VBLeft" unique_id=111528259]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="LivesLabel" type="Label" parent="HB/VBLeft" unique_id=1220408504]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LIVES"
+label_settings = ExtResource("1_ikgbi")
+
+[node name="VB" type="VBoxContainer" parent="HB/VBLeft" unique_id=1542402035]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Spacer" type="Control" parent="HB/VBLeft/VB" unique_id=1938448400]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="LivesGrid" type="GridContainer" parent="HB/VBLeft/VB" unique_id=1921975980]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/h_separation = 60
+columns = 3
+
+[node name="Spacer" type="Control" parent="HB" unique_id=1601829696]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBRight" type="VBoxContainer" parent="HB" unique_id=16413141]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer" type="Control" parent="HB/VBRight" unique_id=724823974]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BestTimeTitle" type="Label" parent="HB/VBRight" unique_id=652584564]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BEST TIME"
+label_settings = ExtResource("3_4fs4r")
+
+[node name="BestTimeValue" type="Label" parent="HB/VBRight" unique_id=880791135]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "00020"
+label_settings = SubResource("LabelSettings_4fqor")
+
+[node name="Spacer2" type="Control" parent="HB/VBRight" unique_id=731487847]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HighScoreTitle" type="Label" parent="HB/VBRight" unique_id=203111804]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "HIGH SCORE"
+label_settings = ExtResource("5_pusr7")
+
+[node name="HighScoreLabel" type="Label" parent="HB/VBRight" unique_id=1873812921]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "00020"
+label_settings = SubResource("LabelSettings_88byq")
+
+[node name="Spacer3" type="Control" parent="HB/VBRight" unique_id=1779616353]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="GameScoreTitle" type="Label" parent="HB/VBRight" unique_id=622228398]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GAME SCORE"
+label_settings = ExtResource("6_3yw5c")
+
+[node name="GameScoreValue" type="Label" parent="HB/VBRight" unique_id=1778712067]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "00020"
+label_settings = SubResource("LabelSettings_adcmg")
+
+[node name="OptionsWidget" type="Control" parent="." unique_id=1314168389]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="OptionsWidget" unique_id=994521716]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="HB" type="HBoxContainer" parent="OptionsWidget" unique_id=1287184265]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -95.0
+offset_right = 180.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VB" type="VBoxContainer" parent="OptionsWidget/HB" unique_id=756280542]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="OptionsWidget/HB/VB" unique_id=452938251]
+layout_mode = 2
+text = "PAUSED"
+label_settings = ExtResource("3_4fs4r")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="OptionsWidget/HB/VB" unique_id=1615377824]
+layout_mode = 2
+text = "PRESS SPACE TO RESUME"
+label_settings = ExtResource("7_4fs4r")
+horizontal_alignment = 1
+
+[node name="VolumeControl" parent="OptionsWidget/HB/VB" unique_id=757115812 instance=ExtResource("8_62njd")]
+layout_mode = 2
+
+[node name="SfxControl" parent="OptionsWidget/HB/VB" unique_id=1254298474 instance=ExtResource("8_62njd")]
+layout_mode = 2
+volume_label = "SFX"
+audio_bus_name = "Sfx"
+
+[node name="GameOverWidget" type="Control" parent="." unique_id=326545769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOverWidget" unique_id=178120142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="HB2" type="HBoxContainer" parent="GameOverWidget" unique_id=989232795]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -149.5
+offset_right = 249.0
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VB" type="VBoxContainer" parent="GameOverWidget/HB2" unique_id=229117373]
+layout_mode = 2
+alignment = 1
+
+[node name="NewBestTimeLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=582247596]
+layout_mode = 2
+text = "* NEW BEST TIME!! *"
+label_settings = SubResource("LabelSettings_62njd")
+horizontal_alignment = 1
+
+[node name="NewBestScoreLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=1304392115]
+layout_mode = 2
+text = "* NEW BEST SCORE!! *"
+label_settings = SubResource("LabelSettings_62njd")
+horizontal_alignment = 1
+
+[node name="FinalVerdictLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=545204399]
+layout_mode = 2
+text = "YOU WON"
+label_settings = ExtResource("9_62njd")
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=967528496]
+layout_mode = 2
+text = "FINAL SCORE: 14500"
+label_settings = ExtResource("6_3yw5c")
+horizontal_alignment = 1
+
+[node name="FinalTimeLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=1000890136]
+layout_mode = 2
+text = "TIME: 100 SECONDS"
+label_settings = ExtResource("3_4fs4r")
+horizontal_alignment = 1
+
+[node name="RestartLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=2114513267]
+layout_mode = 2
+text = "PRESS SPACE TO RESTART"
+label_settings = ExtResource("7_4fs4r")
+horizontal_alignment = 1
+
+[node name="MenuLabel" type="Label" parent="GameOverWidget/HB2/VB" unique_id=1568764137]
+layout_mode = 2
+text = "PRESS ESC TO CHANGE DIFFICULTY"
+label_settings = ExtResource("7_4fs4r")
+horizontal_alignment = 1

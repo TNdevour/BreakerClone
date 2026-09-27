@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://isbmvjy1ywu2"]
+
+[ext_resource type="PackedScene" uid="uid://pqog2t3at2aq" path="res://Scenes/Brick/brick.tscn" id="1_et2vs"]
+[ext_resource type="Script" uid="uid://b67t1q4buqb2a" path="res://Scenes/Brick/brick_holder.gd" id="1_j2w6h"]
+
+[node name="BrickHolder" type="Control" unique_id=30538322]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j2w6h")
+
+[node name="Brick" parent="." unique_id=1928896904 instance=ExtResource("1_et2vs")]

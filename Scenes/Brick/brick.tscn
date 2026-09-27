@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://pqog2t3at2aq"]
+
+[ext_resource type="Script" uid="uid://ddxodcr2admcq" path="res://Scenes/Brick/brick.gd" id="1_frtvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knmuy"]
+size = Vector2(62, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64457"]
+size = Vector2(60, 20)
+
+[node name="Brick" type="StaticBody2D" unique_id=1928896904]
+collision_layer = 4
+script = ExtResource("1_frtvd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=492630495]
+offset_left = -30.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 10.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(1, 0, 0, 1)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1291106261]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=38239862]
+visible = false
+scale = Vector2(0.97, 0.97)
+shape = SubResource("RectangleShape2D_knmuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1481722005]
+shape = SubResource("RectangleShape2D_64457")
+
+[node name="BrickDestroyTimer" type="Timer" parent="." unique_id=899846028]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

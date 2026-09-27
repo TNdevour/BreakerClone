@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cpfebnx4cscbc"]
+
+[ext_resource type="Script" uid="uid://doeu8hy5wpf2a" path="res://Scenes/GameStage/game_stage.gd" id="1_ve5jh"]
+[ext_resource type="PackedScene" uid="uid://rdbkj6yxxa13" path="res://Scenes/BallV2/ball_v_2.tscn" id="2_c4upt"]
+[ext_resource type="PackedScene" uid="uid://1ea320c11rpa" path="res://Scenes/Wall/wall.tscn" id="3_g0p3h"]
+[ext_resource type="PackedScene" uid="uid://cwiexi6qdhbri" path="res://Scenes/PlayerPaddle/player_paddle.tscn" id="4_o83q6"]
+[ext_resource type="PackedScene" uid="uid://7vkn51xp7x72" path="res://Scenes/KillZone/kill_zone.tscn" id="5_sw7mn"]
+[ext_resource type="PackedScene" uid="uid://dnf0oiavedabb" path="res://Scenes/BrickGrid/brick_grid.tscn" id="6_jma0a"]
+[ext_resource type="PackedScene" uid="uid://cbdggainatlhf" path="res://Scenes/GameUi/game_ui.tscn" id="7_c4upt"]
+
+[node name="GameStage" type="Node" unique_id=303400257]
+script = ExtResource("1_ve5jh")
+ball_scene = ExtResource("2_c4upt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1818339438]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="Wall" parent="." unique_id=1043767309 instance=ExtResource("3_g0p3h")]
+position = Vector2(326, 317)
+rotation = -1.5707964
+scale = Vector2(0.57, 1.018)
+
+[node name="Wall2" parent="." unique_id=953073529 instance=ExtResource("3_g0p3h")]
+position = Vector2(805, 317)
+rotation = -1.5707964
+scale = Vector2(0.57, 1.018)
+
+[node name="Wall3" parent="." unique_id=1879514201 instance=ExtResource("3_g0p3h")]
+position = Vector2(564, -4)
+rotation = -3.1415927
+scale = Vector2(0.398, 0.57)
+_wall_group = "ceiling"
+
+[node name="PlayerPaddle" parent="." unique_id=1623619519 instance=ExtResource("4_o83q6")]
+position = Vector2(557, 625)
+_paddle_speed = 400.0
+_can_move = true
+
+[node name="LaunchTimer" type="Timer" parent="." unique_id=1009654538]
+one_shot = true
+
+[node name="KillZone" parent="." unique_id=1507896670 instance=ExtResource("5_sw7mn")]
+position = Vector2(560, 697)
+
+[node name="BrickGrid" parent="." unique_id=788833736 instance=ExtResource("6_jma0a")]
+grid_rows = 10
+
+[node name="BallSpawnPoint" type="Marker2D" parent="." unique_id=382907643]
+position = Vector2(557, 559)
+
+[node name="GameUi" parent="." unique_id=802495142 instance=ExtResource("7_c4upt")]
+z_index = 10
+
+[node name="PlayTimer" type="Timer" parent="." unique_id=1056922375]
+process_mode = 1

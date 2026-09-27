@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bj1m7moe3tejv"]
+
+[ext_resource type="Script" uid="uid://eq761221p52x" path="res://Scenes/Test/test.gd" id="1_83r8m"]
+[ext_resource type="PackedScene" uid="uid://1ea320c11rpa" path="res://Scenes/Wall/wall.tscn" id="1_kr3tn"]
+[ext_resource type="PackedScene" uid="uid://cwiexi6qdhbri" path="res://Scenes/PlayerPaddle/player_paddle.tscn" id="2_v7cj3"]
+[ext_resource type="PackedScene" uid="uid://rdbkj6yxxa13" path="res://Scenes/BallV2/ball_v_2.tscn" id="3_v7cj3"]
+[ext_resource type="PackedScene" uid="uid://7vkn51xp7x72" path="res://Scenes/KillZone/kill_zone.tscn" id="6_fpuyy"]
+[ext_resource type="PackedScene" uid="uid://dnf0oiavedabb" path="res://Scenes/BrickGrid/brick_grid.tscn" id="7_l8y5p"]
+
+[node name="Test" type="Node" unique_id=1809334314]
+script = ExtResource("1_83r8m")
+
+[node name="Wall" parent="." unique_id=1043767309 instance=ExtResource("1_kr3tn")]
+position = Vector2(326, 317)
+rotation = -1.5707964
+scale = Vector2(0.57, 1.018)
+
+[node name="Wall2" parent="." unique_id=687226004 instance=ExtResource("1_kr3tn")]
+position = Vector2(805, 317)
+rotation = -1.5707964
+scale = Vector2(0.57, 1.018)
+
+[node name="Wall3" parent="." unique_id=1071113394 instance=ExtResource("1_kr3tn")]
+position = Vector2(564, -4)
+rotation = -3.1415927
+scale = Vector2(0.398, 0.57)
+_wall_group = "ceiling"
+
+[node name="PlayerPaddle" parent="." unique_id=1623619519 instance=ExtResource("2_v7cj3")]
+position = Vector2(557, 625)
+_paddle_speed = 400.0
+_can_move = true
+
+[node name="LaunchTimer" type="Timer" parent="." unique_id=1192846030]
+one_shot = true
+
+[node name="KillZone" parent="." unique_id=1507896670 instance=ExtResource("6_fpuyy")]
+position = Vector2(560, 697)
+
+[node name="BrickGrid" parent="." unique_id=788833736 instance=ExtResource("7_l8y5p")]
+grid_rows = 10
+
+[node name="BallV2" parent="." unique_id=131459770 instance=ExtResource("3_v7cj3")]
+position = Vector2(561, 550)
+
+[connection signal="timeout" from="LaunchTimer" to="." method="_on_launch_timer_timeout"]

@@ -1,0 +1,1 @@
+class_name BrickHolder extends Control

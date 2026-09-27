@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d1fvyxtpiabej"]
+
+[ext_resource type="FontFile" uid="uid://bccwygh10qt8j" path="res://Assets/Fonts/LUNCHTIME.TTF" id="1_scgfw"]
+[ext_resource type="Script" uid="uid://c6nr4kssl7iqs" path="res://Scenes/VolumeControl/volume_control.gd" id="1_twwxj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fcvnj"]
+font = ExtResource("1_scgfw")
+font_size = 30
+
+[node name="VolumeControl" type="HBoxContainer" unique_id=757115812]
+alignment = 1
+script = ExtResource("1_twwxj")
+
+[node name="HSlider" type="HSlider" parent="." unique_id=128510154]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Control" type="Control" parent="." unique_id=44396]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1213537282]
+layout_mode = 2
+text = "MUSIC"
+label_settings = SubResource("LabelSettings_fcvnj")
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

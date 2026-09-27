@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://clfemu86r661d"]
+
+[ext_resource type="FontFile" uid="uid://bccwygh10qt8j" path="res://Assets/Fonts/LUNCHTIME.TTF" id="1_c768l"]
+
+[resource]
+font = ExtResource("1_c768l")
+font_size = 60
+font_color = Color(0.15686275, 0.20784314, 0.3137255, 1)

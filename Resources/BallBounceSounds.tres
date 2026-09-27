@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MultiSfxHolder" format=3 uid="uid://cjasqjftk0f1b"]
+
+[ext_resource type="Script" uid="uid://byl3jw2mrixo0" path="res://Classes/multi_sfx_holder.gd" id="1_hu4x0"]
+[ext_resource type="AudioStream" uid="uid://ot8n0gibdwi5" path="res://Assets/Audio/Sfx/SFX_Boing_Bounce_1.ogg" id="2_bmqvn"]
+[ext_resource type="AudioStream" uid="uid://ci8dq6700dol6" path="res://Assets/Audio/Sfx/SFX_Boing_Bounce_2.ogg" id="3_1bd7l"]
+[ext_resource type="AudioStream" uid="uid://dxkpusxiy5chp" path="res://Assets/Audio/Sfx/SFX_Boing_Bounce_3.ogg" id="4_4go1v"]
+
+[resource]
+script = ExtResource("1_hu4x0")
+sfx_selection = Array[AudioStream]([ExtResource("2_bmqvn"), ExtResource("3_1bd7l"), ExtResource("4_4go1v")])
+metadata/_custom_type_script = "uid://byl3jw2mrixo0"
