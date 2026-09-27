@@ -7,6 +7,8 @@ extends AnimatableBody2D
 const LENGTH_PADDING: float = 24.0
 const LEFT_INPUT:String = "move_left"
 const RIGHT_INPUT:String = "move_right"
+const EXTRALEFTPADDING:float = 10.0
+const EXTRARIGHTPADDING:float = 20.0
 var _paddle_half_width: float = 0.0
 var _start_position:Vector2 = Vector2.ZERO
 
@@ -25,8 +27,8 @@ func _physics_process(delta: float) -> void:
 	var new_x_pos:float = position.x + (move_direction * _paddle_speed * delta)
 	new_x_pos = clamp(
 		new_x_pos,
-		_start_position.x - _paddle_half_width -10.0,
-		_start_position.x + _paddle_half_width + 20.0
+		_start_position.x - _paddle_half_width - EXTRALEFTPADDING,
+		_start_position.x + _paddle_half_width + EXTRARIGHTPADDING
 		)
 	position.x = new_x_pos
 	##testing paddle bounce
