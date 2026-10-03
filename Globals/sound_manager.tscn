@@ -2,20 +2,38 @@
 
 [ext_resource type="Script" uid="uid://dgi287aplk0fd" path="res://Globals/sound_manager.gd" id="1_crtyo"]
 
-[sub_resource type="Resource" id="Resource_crtyo"]
-metadata/__load_path__ = "res://Assets/Audio/Music/Troubadeck 53 A Screw Loose.ogg"
-
-[sub_resource type="Resource" id="Resource_an0bs"]
-metadata/__load_path__ = "res://Assets/Audio/Music/Week 15 - Sunburn SPF 3000.ogg"
-
 [node name="SoundManager" type="Node" unique_id=1945425473]
 process_mode = 3
 script = ExtResource("1_crtyo")
-_main_menu_music = SubResource("Resource_crtyo")
-_game_music = SubResource("Resource_an0bs")
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=2123251845]
 bus = &"Sfx"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1961295615]
 bus = &"Music"
+
+[node name="SFXPlayers" type="Node" parent="." unique_id=317107177]
+
+[node name="SfxPlayer1" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=2065532642]
+bus = &"Sfx"
+
+[node name="SfxPlayer2" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=1091472813]
+bus = &"Sfx"
+
+[node name="SfxPlayer3" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=80856920]
+bus = &"Sfx"
+
+[node name="SfxPlayer4" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=1355693155]
+bus = &"Sfx"
+
+[node name="SfxPlayer5" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=49893247]
+bus = &"Sfx"
+
+[node name="SfxPlayer6" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=1079602804]
+bus = &"Sfx"
+
+[node name="SfxPlayer7" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=339146757]
+bus = &"Sfx"
+
+[node name="SfxPlayer8" type="AudioStreamPlayer" parent="SFXPlayers" unique_id=501918749]
+bus = &"Sfx"

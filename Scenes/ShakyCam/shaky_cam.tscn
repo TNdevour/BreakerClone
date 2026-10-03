@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvv6kaa6kfpxp"]
+
+[ext_resource type="Script" uid="uid://23x0eve7fo77" path="res://Scenes/ShakyCam/shaky_cam.gd" id="1_wmbm5"]
+
+[node name="ShakyCam" type="Camera2D" unique_id=1514214896]
+script = ExtResource("1_wmbm5")

@@ -13,9 +13,14 @@ extends Control
 @onready var restart_label: Label = $GameOverWidget/HB2/VB/RestartLabel
 @onready var new_best_time_label: Label = $GameOverWidget/HB2/VB/NewBestTimeLabel
 @onready var new_best_score_label: Label = $GameOverWidget/HB2/VB/NewBestScoreLabel
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 const HEART_SPHERE = preload("uid://cjv15ujmc3r6g")
+const VICTORYMESSAGE:String = "You Won!"
+const DEFEATMESSAGE:String = "You Lost..."
+const PLAYERSCOREDANIM:String = "PlayerScoredFlash"
+const LIFELOSTANIM:String = "LifeLostFlash"
 enum GameState{READY, PLAYING, PAUSED, GAMEOVER}
 var _game_state:GameState = GameState.READY
 
@@ -47,14 +52,14 @@ func _input(event: InputEvent) -> void:
 
 func toggle_pause() -> void:
 	if get_tree().paused == true and _game_state == GameState.PAUSED:
-		print("unpaused")
+		#print("unpaused")
 		get_tree().paused = false
 		_game_state = GameState.PLAYING
 		options_widget.hide()
 		SignalHub.emit_on_pause_state_toggled(false)
 		announce_game_state()
 	elif _game_state == GameState.PLAYING:
-		print("paused")
+		#print("paused")
 		get_tree().paused = true
 		_game_state = GameState.PAUSED
 		options_widget.show()
@@ -63,14 +68,11 @@ func toggle_pause() -> void:
 
 func update_score_display()-> void:
 	game_score_value.text = "%d"%[ScoreManager._player_score]
+	animation_player.play(PLAYERSCOREDANIM)
 
 func set_high_score_values()-> void:
 	best_time_value.text = "%d"%[TimeManager._best_time]
 	high_score_label.text = "%d"%[ScoreManager._high_score]
-
-func display_lifegrid_contents()-> void:
-	for node in lives_grid.get_children():
-		print("node: %s"%[node.to_string()])
 
 func update_lives_display()-> void:
 	for life_heart in ScoreManager._player_lives:
@@ -82,6 +84,7 @@ func clear_lives_display()-> void:
 		node.queue_free()
 
 func reduce_life_count_in_display()-> void:
+	animation_player.play(LIFELOSTANIM)
 	var heart_spheres:Array[Node] = lives_grid.get_children()
 	var latest_heart:Node = heart_spheres.back()
 	if latest_heart != null:
@@ -96,17 +99,17 @@ func display_game_over_widget(is_game_won: bool)-> void:
 	await get_tree().create_timer(1.0).timeout
 	announce_game_state()
 	if is_game_won:
-		show_final_verdict("You Won!")
+		show_final_verdict(VICTORYMESSAGE)
 		show_final_score()
 		show_final_time()
 		show_restart_and_menu_labels()
-		print("Game won")
+		#print("Game won")
 	else:
-		show_final_verdict("You Lost...")
+		show_final_verdict(DEFEATMESSAGE)
 		show_final_score()
 		show_final_time()
 		show_restart_and_menu_labels()
-		print("Game lost")
+		#print("Game lost")
 
 func show_final_score()-> void:
 	final_score_label.text = "Final Score: %d"%[ScoreManager._final_score]
@@ -138,7 +141,7 @@ func show_final_verdict(verdict_message:String)-> void:
 	final_verdict_label.show()
 
 func show_best_time_beaten_label()-> void:
-	print("High Score Beaten!!!")
+	#print("High Score Beaten!!!")
 	new_best_time_label.show()
 
 func show_best_score_beaten_label()-> void:

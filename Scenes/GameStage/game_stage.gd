@@ -29,8 +29,5 @@ func spawn_new_ball()-> void:
 	tween.tween_interval(LAUNCH_DELAY)
 	tween.tween_callback(new_ball.launch_ball)
 
-func is_player_alive()->bool:
-	return ScoreManager._player_lives > 0
-
 func end_the_game(_game_won:bool)-> void:
 	_is_game_over = true

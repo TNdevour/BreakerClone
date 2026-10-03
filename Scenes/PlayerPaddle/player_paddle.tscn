@@ -31,5 +31,5 @@ pivot_offset = Vector2(128, 20)
 texture = SubResource("GradientTexture1D_0x2ti")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798065265]
-position = Vector2(0, -10)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_2tqgj")

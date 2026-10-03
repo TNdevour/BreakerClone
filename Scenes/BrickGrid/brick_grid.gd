@@ -51,7 +51,7 @@ func reset_bricks()-> void:
 
 func remove_a_brick()->void:
 	_total_bricks -= 1
-	print("_total_bricks: %d"%[_total_bricks])
+	#print("_total_bricks: %d"%[_total_bricks])
 	if are_all_bricks_destroyed():
 		SignalHub.emit_on_game_over(true)
 

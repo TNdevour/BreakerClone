@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bg78lbpsf10f4"
+path="res://.godot/imported/JDSherbert - Refreshing Dawn.ogg-a153f5848c40fb984e3f263327f9afcd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/JDSherbert - Refreshing Dawn.ogg"
+dest_files=["res://.godot/imported/JDSherbert - Refreshing Dawn.ogg-a153f5848c40fb984e3f263327f9afcd.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

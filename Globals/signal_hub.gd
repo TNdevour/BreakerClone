@@ -15,7 +15,7 @@ signal on_best_time_beaten
 signal on_best_score_beaten
 signal on_best_scores_updated
 signal on_pause_state_toggled(is_game_paused:bool)
-
+signal on_invoke_camera_shake(trauma_amount:float)
 
 func emit_on_player_scored(points_scored: float) -> void:
 	on_player_scored.emit(points_scored)
@@ -59,5 +59,8 @@ func emit_on_best_score_beaten()-> void:
 func emit_on_best_scores_updated()-> void:
 	on_best_scores_updated.emit()
 
-func emit_on_pause_state_toggled(is_game_paused:bool):
+func emit_on_pause_state_toggled(is_game_paused:bool)-> void:
 	on_pause_state_toggled.emit(is_game_paused)
+
+func emit_on_invoke_camera_shake(trauma_amount:float)-> void:
+	on_invoke_camera_shake.emit(trauma_amount)

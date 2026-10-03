@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://7vkn51xp7x72" path="res://Scenes/KillZone/kill_zone.tscn" id="5_sw7mn"]
 [ext_resource type="PackedScene" uid="uid://dnf0oiavedabb" path="res://Scenes/BrickGrid/brick_grid.tscn" id="6_jma0a"]
 [ext_resource type="PackedScene" uid="uid://cbdggainatlhf" path="res://Scenes/GameUi/game_ui.tscn" id="7_c4upt"]
+[ext_resource type="PackedScene" uid="uid://dvv6kaa6kfpxp" path="res://Scenes/ShakyCam/shaky_cam.tscn" id="8_g0p3h"]
+[ext_resource type="Script" uid="uid://cfmhahfjg7wtf" path="res://Scenes/GameStage/marker_2d.gd" id="9_o83q6"]
 
 [node name="GameStage" type="Node" unique_id=303400257]
 script = ExtResource("1_ve5jh")
@@ -55,3 +57,9 @@ position = Vector2(557, 559)
 
 [node name="GameUi" parent="." unique_id=802495142 instance=ExtResource("7_c4upt")]
 z_index = 10
+
+[node name="ShakyCam" parent="." unique_id=1514214896 instance=ExtResource("8_g0p3h")]
+target_node = NodePath("../ScreenCenterMarker")
+
+[node name="ScreenCenterMarker" type="Marker2D" parent="." unique_id=266455550]
+script = ExtResource("9_o83q6")

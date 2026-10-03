@@ -124,7 +124,7 @@ func add_player_life()-> void:
 func remove_player_life()-> void:
 	_player_lives -= 1
 	_player_lives = clamp(_player_lives,0, _default_player_lives)
-	print("_player_lives: %d"%[_player_lives])
+	#print("_player_lives: %d"%[_player_lives])
 	if is_player_dead(): SignalHub.emit_on_game_over(false)
 
 func is_player_dead()-> bool:

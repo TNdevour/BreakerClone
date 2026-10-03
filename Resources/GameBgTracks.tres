@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MultiSfxHolder" format=3 uid="uid://cikf8ym0hbrqs"]
+
+[ext_resource type="Script" uid="uid://4coeecqf8et1" path="res://Classes/multi_sfx_holder.gd" id="1_yv4tt"]
+[ext_resource type="AudioStream" uid="uid://bmadkaxpttf4r" path="res://Assets/Audio/Music/JDSherbert - Streetlights.ogg" id="2_l1ubc"]
+[ext_resource type="AudioStream" uid="uid://bmmhb0gn5yr5o" path="res://Assets/Audio/Music/JDSherbert - Smooth Driving.ogg" id="3_oweuj"]
+[ext_resource type="AudioStream" uid="uid://bg78lbpsf10f4" path="res://Assets/Audio/Music/JDSherbert - Refreshing Dawn.ogg" id="4_yajoc"]
+
+[resource]
+script = ExtResource("1_yv4tt")
+sfx_selection = Array[AudioStream]([ExtResource("2_l1ubc"), ExtResource("3_oweuj"), ExtResource("4_yajoc")])
+metadata/_custom_type_script = "uid://4coeecqf8et1"

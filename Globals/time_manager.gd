@@ -62,4 +62,4 @@ func _process(delta: float) -> void:
 	if _is_game_over or _is_game_paused: return
 	
 	_game_time += delta
-	print("game_time: %d"%[_game_time])
+	#print("game_time: %d"%[_game_time])

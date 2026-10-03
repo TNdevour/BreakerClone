@@ -6,11 +6,9 @@ extends HBoxContainer
 @export var volume_label:String = "MUSIC"
 @export var audio_bus_name:String = "Music"
 
-var _audio_bus_id:int = 0
-
 func _ready() -> void:
-	_audio_bus_id = AudioServer.get_bus_index(audio_bus_name)
 	label.text = volume_label
+	h_slider.value = SoundManager.get_channel_volume_by_audiobus(audio_bus_name)
 
 func _on_h_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(_audio_bus_id, value)
+	SoundManager.set_volume_for_bus(audio_bus_name,value)

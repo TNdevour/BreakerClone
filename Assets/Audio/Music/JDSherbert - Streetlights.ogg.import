@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmadkaxpttf4r"
+path="res://.godot/imported/JDSherbert - Streetlights.ogg-26bc38b179c0bc4f31f26c9ed871529d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/JDSherbert - Streetlights.ogg"
+dest_files=["res://.godot/imported/JDSherbert - Streetlights.ogg-26bc38b179c0bc4f31f26c9ed871529d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
